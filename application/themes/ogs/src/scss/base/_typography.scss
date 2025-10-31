@@ -1,0 +1,56 @@
+%block-margins {
+  margin: 1em 0;
+}
+
+%heading-margins {
+  margin: 1em 0 0.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+/* headings */
+h1 {
+  font-size: em(66);
+  line-height: 1.1;
+  @extend %heading-margins;
+}
+h2 {
+  font-size: 24px;
+  line-height: 1.1;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0px;
+}
+h3 {
+  font-size: 22px;
+  line-height: 1.1;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0px;
+}
+h4 {
+  font-size: em(30);
+  line-height: 1.3;
+  @extend %heading-margins;
+}
+h5 {
+  font-size: em(26);
+  line-height: 1;
+  @extend %heading-margins;
+}
+h6 {
+  font-size: em(18);
+  line-height: 1;
+  @extend %heading-margins;
+}
+
+// Others
+p, ul, ol, pre {
+  @extend %block-margins;
+}
+
+p {
+  font-size: em(14);
+  color: inherit;
+  line-height: 1;
+}
