@@ -16,17 +16,23 @@ use Concrete\Core\Page\PageList;
         </svg>
         <div class="wrape-main">
             <div class="taeb-switch left text-center">
-                <?php foreach($pages as $page) { 
+                <?php 
+                $active = false;
+                foreach($pages as $page) { 
                     $title = $page->getCollectionName();
                     $id = $page->getCollectionID();
                     ?>
-                    <div class="taeb" data-id="<?php echo $id ?>" ><?php echo $title ?></div>
-                <?php } ?>
+                    <div class="taeb <?php if(!$active) { echo "active"; } ?>" data-id="<?php echo $id ?>" <?php if(!$active) { echo "taeb-direction='left'"; } else { echo "taeb-direction='right'"; } ?> ><?php echo $title ?></div>
+                <?php 
+                $active = true;
+            } ?>
             </div>
         </div>
     </div>
 
-    <?php foreach($pages as $page) { 
+    <?php 
+    $active = true;
+    foreach($pages as $page) { 
             $id = $page->getCollectionID();
             $itemCategoryList = new PageList();
             $itemCategoryList->filterByParentID($id);
@@ -34,7 +40,7 @@ use Concrete\Core\Page\PageList;
             $itemCategoryList->sortByDisplayOrder();
             $itemCategories = $itemCategoryList->getResults();
         ?>
-    <div class="accordion-parent" data-id="<?php echo $id ?>">
+    <div class="accordion-parent" data-id="<?php echo $id ?>" <?php if(!$active) { echo "style='display:none'"; } ?> >
         <div class="accordion">
             <?php foreach($itemCategories as $itemCategory) { 
                 $itemCategoryTitle = $itemCategory->getCollectionName();
@@ -64,7 +70,9 @@ use Concrete\Core\Page\PageList;
                         </div>
                     </div>
                 </div>
-            <?php } ?>
+            <?php 
+        $active = false;
+        } ?>
         </div>
     </div>
     <?php } ?>
