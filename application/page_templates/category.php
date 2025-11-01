@@ -58,7 +58,7 @@ use Concrete\Core\Page\PageList;
                             $items = $itemList->getResults();
                             foreach($items as $item) {
                                 $itemTitle = $item->getCollectionName();
-                                $itemPrice = 800;
+                                $itemPrice = $item->getAttribute("price");
                                 $itemDescription = $item->getCollectionDescription();
                                 ?>
                                 <div class="food-card">
