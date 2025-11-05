@@ -246,11 +246,12 @@ header {
       gap: 20px;
       flex-wrap: wrap;
       .big-card{
-        width: calc(50% - 10px);
+        width: 100%;
         .big-card-inner{
           gap: 10px;
           h3{
             font-size: 20px;
+            text-align: center;
           }
         }
       }
@@ -315,7 +316,9 @@ header {
 }
 
 .taeb-switch .taeb {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 50%;
   padding: 12px 0;
   z-index: 1;

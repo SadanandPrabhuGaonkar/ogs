@@ -20,7 +20,7 @@
                 <div class="big-card">
                     <a href="<?php echo $url ?>" >
                         <div class="big-card-inner">
-                            <img class="svg-img" src="<?php echo $this->getThemePath(); ?>/dist/images/drinks.svg" alt="<?php echo $site; ?>"/>
+                            <!-- <img class="svg-img" src="<?php echo $this->getThemePath(); ?>/dist/images/drinks.svg" alt="<?php echo $site; ?>"/> -->
                             <h3><?php echo $title ?></h3>
                         </div>
                     </a>
