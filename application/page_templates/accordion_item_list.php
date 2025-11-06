@@ -62,6 +62,7 @@ use Concrete\Core\Page\PageList;
                                                 </svg>
                                             <?php } ?>
                                         </div>
+                                    <?php } ?>
                                 </div>
                             <?php } ?>
                         </div>
