@@ -16,11 +16,11 @@ use Concrete\Core\Page\PageList;
         </svg>
     </div>
 
-    <div class="accordion-parent" data-id="<?php echo $id ?>">
+    <div class="accordion-parent">
         <div class="accordion">
             <?php 
             $itemCategoryList = new PageList();
-            $itemList->filterByParentID($c->getCollectionID());
+            $itemCategoryList->filterByParentID($c->getCollectionID());
             $itemCategoryList->filterByPageTypeHandle('item_category');
             $itemCategoryList->sortByDisplayOrder();
             $itemCategories = $itemCategoryList->getResults();
@@ -42,11 +42,26 @@ use Concrete\Core\Page\PageList;
                                 $itemTitle = $item->getCollectionName();
                                 $itemPrice = $item->getAttribute("price");
                                 $itemDescription = $item->getCollectionDescription();
+                                $type = (string)$item->getAttribute("type");
                                 ?>
                                 <div class="food-card">
                                     <h3><?php echo $itemTitle ?></h3>
                                     <p class="price">₹<?php echo $itemPrice ?></p>
                                     <p><?php echo $itemDescription ?></p>
+                                    <?php if ($type) { ?>
+                                        <div class="food-type-icon">
+                                            <?php if ($type == 'vegetarian') { ?>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                    <circle cx="12" cy="12" r="10" stroke="#4CAF50" stroke-width="2"/>
+                                                    <circle cx="12" cy="12" r="6" fill="#4CAF50"/>
+                                                </svg>
+                                            <?php } elseif ($type == 'non-vegetarian') { ?>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                    <circle cx="12" cy="12" r="10" stroke="#F44336" stroke-width="2"/>
+                                                    <circle cx="12" cy="12" r="6" fill="#F44336"/>
+                                                </svg>
+                                            <?php } ?>
+                                        </div>
                                 </div>
                             <?php } ?>
                         </div>
