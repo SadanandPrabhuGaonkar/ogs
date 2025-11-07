@@ -17,14 +17,15 @@
                     $title = $page->getCollectionName();
                     $url = $page->getCollectionLink();
                 ?>
-                <div class="big-card">
-                    <a href="<?php echo $url ?>" >
-                        <div class="big-card-inner">
-                            <!-- <img class="svg-img" src="<?php echo $this->getThemePath(); ?>/dist/images/drinks.svg" alt="<?php echo $site; ?>"/> -->
-                            <h3><?php echo $title ?></h3>
-                        </div>
-                    </a>
-                </div>
+                <a class="big-card" href="<?php echo $url ?>" >
+                    <div>
+                        
+                            <div class="big-card-inner">
+                                <!-- <img class="svg-img" src="<?php echo $this->getThemePath(); ?>/dist/images/drinks.svg" alt="<?php echo $site; ?>"/> -->
+                                <h3><?php echo $title ?></h3>
+                            </div> 
+                    </div>
+                </a>
             <?php } ?>
         </div>
     </div>

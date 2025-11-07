@@ -37,7 +37,7 @@ $ih = new ImageHelper();
                 <a href="<?php echo $pageURL ?>">
                     <div class="big-card">
                         <div class="big-card-inner">
-                            <img class="svg-img" src="<?php echo $logoImage ?>" alt="<?php echo $site; ?>"/>
+                            <!-- <img class="svg-img" src="<?php echo $logoImage ?>" alt="<?php echo $site; ?>"/> -->
                             <h3><?php echo $title ?></h3>
                         </div>
                     </div>
